@@ -106,6 +106,16 @@ const Navbar = () => {
           <Menu.Item key="6">
             <a href="#">Business & Economics</a>
           </Menu.Item>
+          <Menu.Item key="6">
+            <a href="#">Education</a>
+          </Menu.Item>
+          <Menu.Item key="6">
+            <a href="#">Health</a>
+          </Menu.Item>
+          <Menu.Item key="6">
+            <a href="#">Entertainment</a>
+          </Menu.Item>
+
           <Menu.SubMenu key="sub1" title="More">
             <Menu.Item key="7">Sub Option 1</Menu.Item>
             <Menu.Item key="8">Sub Option 2</Menu.Item>

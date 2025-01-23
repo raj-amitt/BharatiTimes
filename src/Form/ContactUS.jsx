@@ -129,7 +129,9 @@ const ContactUS = () => {
         </Form>
       </div>
     </div>
+    
   );
 };
+
 
 export default ContactUS;

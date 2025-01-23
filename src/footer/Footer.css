@@ -1,0 +1,44 @@
+/* footer.css */
+
+.footer {
+  background-color: red;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-address {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-social {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-incubations {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.social-highlight {
+  font-weight: bold;
+  color: yellow;
+}
+
+@media (max-width: 768px) {
+  .footer {
+      padding: 15px;
+  }
+
+  .footer-address, .footer-social, .footer-incubations {
+      font-size: 12px;
+  }
+}

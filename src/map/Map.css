@@ -1,0 +1,41 @@
+/* map.css */
+
+.map-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.map-container h2 {
+  color: red;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.map {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid #ddd;
+}
+
+.address {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.address p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .map-container h2 {
+      font-size: 20px;
+  }
+
+  .address p {
+      font-size: 12px;
+  }
+}
