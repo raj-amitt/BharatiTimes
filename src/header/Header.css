@@ -1,0 +1,54 @@
+/* General Header Styles */
+.header-container {
+  background-color: #f5222d;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Inner Container */
+.header-inner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Desktop Menu */
+.menu-desktop {
+  display: flex;
+}
+
+/* Mobile Menu Icon */
+.menu-mobile-icon {
+  display: none;
+}
+
+/* Mobile Header Title */
+.header-title-mobile {
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding-left: 15px;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .menu-desktop {
+    display: none; /* Hide desktop menu for smaller screens */
+  }
+
+  .menu-mobile-icon {
+    display: block; /* Show hamburger menu for smaller screens */
+  }
+
+  .header-title-mobile {
+    display: block; /* Show "BharatiTimes" for smaller screens */
+  }
+
+  .header-container {
+    padding: 15px 20px; /* Adjust padding for smaller screens */
+    height: 60px; /* Increase height for smaller screens */
+  }
+}

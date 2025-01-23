@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Drawer, Button, Menu, Dropdown } from "antd";
 import { MenuOutlined, DownOutlined } from "@ant-design/icons";
 import "antd/dist/reset.css";
+import "./Header.css";
 
 const Navbar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
@@ -21,23 +22,12 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "#f5222d",
-        padding: "10px 20px",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+    <div className="header-container">
+      <div className="header-inner-container">
+        {/* Logo for Mobile */}
+        <div className="header-title-mobile">BharatiTimes</div>
 
+        {/* Desktop Menu */}
         <div className="menu-desktop">
           <a href="#" style={{ color: "white", margin: "0 15px" }}>
             Home
@@ -57,6 +47,18 @@ const Navbar = () => {
           <a href="#" style={{ color: "white", margin: "0 15px" }}>
             Business & Economics
           </a>
+          <a href="#" style={{ color: "white", margin: "0 15px" }}>
+            Education
+          </a>
+          <a href="#" style={{ color: "white", margin: "0 15px" }}>
+            Health
+          </a>
+          <a href="#" style={{ color: "white", margin: "0 15px" }}>
+            Entertainment
+          </a>
+          <a href="#" style={{ color: "white", margin: "0 15px" }}>
+            Sports
+          </a>
           <Dropdown overlay={moreMenu}>
             <a href="#" style={{ color: "white", margin: "0 15px" }}>
               More <DownOutlined />
@@ -67,6 +69,7 @@ const Navbar = () => {
           </a>
         </div>
 
+        {/* Mobile Menu Icon */}
         <Button
           type="text"
           icon={<MenuOutlined style={{ color: "white" }} />}
@@ -75,11 +78,11 @@ const Navbar = () => {
           style={{
             color: "white",
             fontSize: "24px",
-            display: "none",
           }}
         />
       </div>
 
+      {/* Drawer Menu for Mobile */}
       <Drawer
         title="Menu"
         placement="right"
@@ -106,46 +109,26 @@ const Navbar = () => {
           <Menu.Item key="6">
             <a href="#">Business & Economics</a>
           </Menu.Item>
-          <Menu.Item key="6">
+          <Menu.Item key="7">
             <a href="#">Education</a>
           </Menu.Item>
-          <Menu.Item key="6">
+          <Menu.Item key="8">
             <a href="#">Health</a>
           </Menu.Item>
-          <Menu.Item key="6">
+          <Menu.Item key="9">
             <a href="#">Entertainment</a>
           </Menu.Item>
 
           <Menu.SubMenu key="sub1" title="More">
-            <Menu.Item key="7">Sub Option 1</Menu.Item>
-            <Menu.Item key="8">Sub Option 2</Menu.Item>
-            <Menu.Item key="9">Sub Option 3</Menu.Item>
+            <Menu.Item key="10">Sub Option 1</Menu.Item>
+            <Menu.Item key="11">Sub Option 2</Menu.Item>
+            <Menu.Item key="12">Sub Option 3</Menu.Item>
           </Menu.SubMenu>
-          <Menu.Item key="10">
+          <Menu.Item key="13">
             <a href="#">Contact Us</a>
           </Menu.Item>
         </Menu>
       </Drawer>
-
-      <style jsx>{`
-        .menu-desktop {
-          display: flex;
-        }
-
-        .menu-mobile-icon {
-          display: none;
-        }
-
-        @media (max-width: 1024px) {
-          .menu-desktop {
-            display: none; /* Hide desktop menu for smaller screens */
-          }
-
-          .menu-mobile-icon {
-            display: block; /* Show hamburger menu for smaller screens */
-          }
-        }
-      `}</style>
     </div>
   );
 };
