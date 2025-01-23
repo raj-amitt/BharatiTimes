@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Input, Button, Form, Row, Col, Typography, Switch } from "antd";
+import { Input, Button, Form, Row, Col, Typography } from "antd";
 import { SunOutlined, MoonOutlined } from "@ant-design/icons";
 import "./ContactUS.css";
 
@@ -16,7 +16,7 @@ const ContactUS = () => {
     const num1 = Math.floor(Math.random() * 10) + 1;
     const num2 = Math.floor(Math.random() * 10) + 1;
     setCorrectAnswer(num1 + num2);
-    setCaptchaQuestion(`${num1} + ${num2} = `);
+    setCaptchaQuestion(`${num1} + ${num2} =`);
   };
 
   useEffect(() => {
@@ -27,125 +27,109 @@ const ContactUS = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmit = () => {
     const userAnswer = parseInt(captchaInput, 10);
     if (userAnswer === correctAnswer) {
       alert("Form submitted successfully!");
       generateCaptcha();
+      setCaptchaInput("");
     } else {
       alert("Captcha incorrect. Please try again.");
     }
   };
 
   return (
-    <div
-      className={`contact-form-container ${theme} contact_form`}
-      style={theme === "light" ? lightThemeStyle : darkThemeStyle}
-    >
-      <Title level={2} style={{ textAlign: "center" }}>
-        Contact Us
-      </Title>
-      <button onClick={handleThemeToggle} className="theme-toggle-btn">
-        {theme === "light" ? <SunOutlined /> : <MoonOutlined />}
-      </button>
-      <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-      <Form onFinish={handleSubmit} layout="vertical" style={{width:"55%"}}>
-        <Row gutter={16}>
-          <Col span={6}>
-            <Form.Item
-              name="name"
-              label="Name"
-              rules={[{ required: true, message: "Please input your name!" }]}
-            >
-              <Input placeholder="Name" />
-            </Form.Item>
-          </Col>
-          <Col span={6}>
-            <Form.Item
-              name="email"
-              label="Email Address"
-              rules={[{ required: true, message: "Please input your email!" }]}
-            >
-              <Input type="email" placeholder="Email Address" />
-            </Form.Item>
-          </Col>
-        </Row>
-        <Row gutter={16}>
-          <Col span={6}>
-            <Form.Item
-              name="contact"
-              label="Contact Number"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your contact number!",
-                },
-              ]}
-            >
-              <Input type="tel" placeholder="Contact Number" />
-            </Form.Item>
-          </Col>
-          <Col span={6}>
-            <Form.Item
-              name="location"
-              label="Location"
-              rules={[
-                { required: true, message: "Please input your location!" },
-              ]}
-            >
-              <Input placeholder="Location" />
-            </Form.Item>
-          </Col>
-        </Row>
-        <Col span={12}>
-        <Form.Item
-          name="subject"
-          label="Subject"
-          rules={[{ required: true, message: "Please input the subject!" }]}
-        >
-          <Input placeholder="Subject" />
-        </Form.Item>
-        </Col>
-        <Col span={12}>
-        <Form.Item
-          name="message"
-          label="Message"
-          rules={[{ required: true, message: "Please input your message!" }]}
-        >
-          <TextArea rows={4} placeholder="Message" />
-        </Form.Item>
-        </Col>
-        <div className="captcha">
-          <Col span={4}>
-          <Form.Item label={captchaQuestion} required>
+    <div className={`contact-form-container ${theme}`}>
+      <div className="form-wrapper">
+        <div className="theme-toggle">
+          <Button
+            icon={theme === "light" ? <SunOutlined /> : <MoonOutlined />}
+            onClick={handleThemeToggle}
+            type="text"
+          />
+        </div>
+        <Title level={2} className={`form-title ${theme}`}>
+          Contact Us
+        </Title>
+        <Form onFinish={handleSubmit} layout="vertical" className="contact-form">
+          <Row gutter={16}>
+            <Col xs={24} sm={12}>
+              <Form.Item
+                name="name"
+                rules={[{ required: true, message: "Please input your name!" }]}
+              >
+                <Input placeholder="Name" />
+              </Form.Item>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Form.Item
+                name="email"
+                rules={[
+                  { required: true, message: "Please input your email!" },
+                ]}
+              >
+                <Input placeholder="Email Address" />
+              </Form.Item>
+            </Col>
+          </Row>
+          <Row gutter={16}>
+            <Col xs={24} sm={12}>
+              <Form.Item
+                name="contact"
+                rules={[
+                  { required: true, message: "Please input your contact number!" },
+                ]}
+              >
+                <Input placeholder="Contact Number" />
+              </Form.Item>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Form.Item
+                name="location"
+                rules={[
+                  { required: true, message: "Please input your location!" },
+                ]}
+              >
+                <Input placeholder="Location" />
+              </Form.Item>
+            </Col>
+          </Row>
+          <Form.Item
+            name="subject"
+            rules={[{ required: true, message: "Please input the subject!" }]}
+          >
+            <Input placeholder="Subject" />
+          </Form.Item>
+          <Form.Item
+            name="message"
+            rules={[{ required: true, message: "Please input your message!" }]}
+          >
+            <TextArea rows={4} placeholder="Message" />
+          </Form.Item>
+          <div className="captcha-container">
+            <span className={`captcha-question ${theme}`}>{captchaQuestion}</span>
             <Input
               value={captchaInput}
               onChange={(e) => setCaptchaInput(e.target.value)}
               placeholder="Answer"
+              className="captcha-input"
+              maxLength={3}
             />
+          </div>
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className={`submit-button ${theme}`}
+              block
+            >
+              Submit
+            </Button>
           </Form.Item>
-          </Col>
-        </div>
-        <Form.Item>
-          <Button type="primary" htmlType="submit" block>
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
+        </Form>
       </div>
     </div>
   );
-};
-
-// Light and Dark Theme Styles
-const lightThemeStyle = {
-  backgroundColor: "#ffffff",
-  color: "#000000",
-};
-
-const darkThemeStyle = {
-  backgroundColor: "#2c2c2c",
-  color: "#ffffff",
 };
 
 export default ContactUS;

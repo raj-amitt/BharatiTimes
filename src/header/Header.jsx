@@ -37,9 +37,9 @@ const Navbar = () => {
           alignItems: "center",
         }}
       >
-        <div style={{ fontSize: "24px", fontWeight: "bold", color: "white" }}>
+        {/* <div style={{ fontSize: "24px", fontWeight: "bold", color: "white" }}>
           Bharati Times
-        </div>
+        </div> */}
 
         <div className="menu-desktop">
           <a href="#" style={{ color: "white", margin: "0 15px" }}>
