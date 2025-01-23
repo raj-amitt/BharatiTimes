@@ -1,0 +1,19 @@
+.header-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_logo{
+  margin: 0;
+  padding: 0;
+}
+
+.header-logo-container img {
+  width: 74%;
+}
+
+@media screen and (max-width: 1024px) {
+  .header-logo-container img {
+    display: none; /* Hide logo on tablet and mobile screens */
+  }
+}
