@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Input, Button, Form, Row, Col, Typography } from "antd";
 import { SunOutlined, MoonOutlined } from "@ant-design/icons";
 import "./ContactUS.css";
+import Map from "../map/Map"; // Importing the Map component
 
 const { TextArea } = Input;
 const { Title } = Typography;
@@ -64,9 +65,7 @@ const ContactUS = () => {
             <Col xs={24} sm={12}>
               <Form.Item
                 name="email"
-                rules={[
-                  { required: true, message: "Please input your email!" },
-                ]}
+                rules={[{ required: true, message: "Please input your email!" }]}
               >
                 <Input placeholder="Email Address" />
               </Form.Item>
@@ -76,9 +75,7 @@ const ContactUS = () => {
             <Col xs={24} sm={12}>
               <Form.Item
                 name="contact"
-                rules={[
-                  { required: true, message: "Please input your contact number!" },
-                ]}
+                rules={[{ required: true, message: "Please input your contact number!" }]}
               >
                 <Input placeholder="Contact Number" />
               </Form.Item>
@@ -86,9 +83,7 @@ const ContactUS = () => {
             <Col xs={24} sm={12}>
               <Form.Item
                 name="location"
-                rules={[
-                  { required: true, message: "Please input your location!" },
-                ]}
+                rules={[{ required: true, message: "Please input your location!" }]}
               >
                 <Input placeholder="Location" />
               </Form.Item>
@@ -128,10 +123,11 @@ const ContactUS = () => {
           </Form.Item>
         </Form>
       </div>
+      <div style={{ marginTop: '20px' }}> {/* Adding margin for spacing */}
+        <Map /> {/* Adding the Map component */}
+      </div>
     </div>
-    
   );
 };
-
 
 export default ContactUS;

@@ -3,6 +3,7 @@ import { Drawer, Button, Menu, Dropdown } from "antd";
 import { MenuOutlined, DownOutlined } from "@ant-design/icons";
 import "antd/dist/reset.css";
 import "./Header.css";
+import HeaderLogo from "./HeaderLogo"; // Added import
 
 const Navbar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
@@ -26,6 +27,7 @@ const Navbar = () => {
       <div className="header-inner-container">
         {/* Logo for Mobile */}
         <div className="header-title-mobile">BharatiTimes</div>
+        {/* <HeaderLogo /> Keep this instance for the top logo */}
 
         {/* Desktop Menu */}
         <div className="menu-desktop">

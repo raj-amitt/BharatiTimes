@@ -33,8 +33,19 @@
   padding-left: 15px;
 }
 
+.header-logo {
+  display: flex;
+  justify-content: center; /* Center the logo */
+  padding: 10px 0; /* Add padding above and below the logo */
+}
 /* Mobile Styles */
 @media (max-width: 1024px) {
+  .header-logo {
+    display: flex;
+    justify-content: center; /* Center the logo */
+    padding: 10px 0; /* Add padding above and below the logo */
+  }
+
   .menu-desktop {
     display: none; /* Hide desktop menu for smaller screens */
   }

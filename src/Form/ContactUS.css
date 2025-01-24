@@ -1,6 +1,7 @@
 /* Container and Form Styling */
 .contact-form-container {
   display: flex;
+  flex-direction: column; /* Change to column to stack items */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -115,3 +116,5 @@
 
 /* Responsive Layout */
 @media screen and (max-width: 768px) {
+  /* Add any responsive styles here */
+}

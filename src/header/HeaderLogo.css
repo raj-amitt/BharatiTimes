@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px; /* Add margin to separate from the header */
 }
 .header_logo{
   margin: 0;
@@ -14,6 +15,7 @@
 
 @media screen and (max-width: 1024px) {
   .header-logo-container img {
-    display: none; /* Hide logo on tablet and mobile screens */
+    display: block; /* Show logo on tablet and mobile screens */
+    width: 100%; /* Adjust width as needed */
   }
 }
