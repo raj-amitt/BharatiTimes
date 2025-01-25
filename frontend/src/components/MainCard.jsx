@@ -1,5 +1,5 @@
 const MainCard = () => (
-    <div className="rounded-lg shadow-md flex flex-col overflow-hidden bg-gray-100">
+    <div className="rounded-lg shadow-md flex flex-col overflow-hidden bg-white">
       <div className="">
         <img src="../../tech.jpg" className="w-full h-64 object-cover" alt="" />
       </div>
