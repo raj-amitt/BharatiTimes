@@ -1,45 +1,66 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
-    <nav className="navbar">
-      <ul>
-        <li>
-          <a href="">Home</a>
-        </li>
-        <li>
-          <a href="">About Us</a>
-        </li>
-        <li>
-          <a href="">National</a>
-        </li>
-        <li>
-          <a href="">International</a>
-        </li>
-        <li>
-          <a href="">Science & Tech</a>
-        </li>
-        <li>
-          <a href="">Business & Economics</a>
-        </li>
-        <li>
-          <a href="">Education</a>
-        </li>
-        <li>
-          <a href="">Health</a>
-        </li>
-        <li>
-          <a href="">Entertainment</a>
-        </li>
-        <li>
-          <a href="">Sports</a>
-        </li>
-        <li>
-          <a href="">More</a>
-        </li>
-        <li>
-          <a href="">Contact Us</a>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className="bg-red-700">
+        <div
+          className="cursor-pointer md:hidden !px-10 !py-2"
+          onClick={toggleMenu}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6 text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </div>
+        <ul
+          className={`md:flex justify-between !px-10 !py-2 text-red-100 ${
+            isMenuOpen ? "block" : "hidden"
+          }`}
+        >
+          {[
+            { path: "/", label: "Home" },
+            { path: "/national", label: "National" },
+            { path: "/international", label: "International" },
+            { path: "/science", label: "Science & Tech" },
+            { path: "/business", label: "Business & Economics" },
+            { path: "/education", label: "Education" },
+            { path: "/health", label: "Health" },
+            { path: "/entertainment", label: "Entertainment" },
+            { path: "/sports", label: "Sports" },
+            { path: "/more", label: "More" },
+          ].map(({ path, label }) => (
+            <li key={path}>
+              <NavLink
+                to={path}
+                className={({ isActive }) =>
+                  isActive ? "text-white font-bold" : "hover:text-white"
+                }
+              >
+                {label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 };
 
