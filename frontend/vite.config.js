@@ -8,4 +8,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    host: '172.16.0.210', // Allows access from any IP address on the local network
+    port: 3000,      // Optional: Specify the port (default is 3000)
+  },
 })

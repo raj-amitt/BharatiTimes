@@ -4,13 +4,13 @@ const MidCard = () => (
       <img src="../../tech.jpg" className="w-full h-48 object-cover rounded-lg" alt="" />
     </div>
     <div className="flex flex-col justify-center gap-2">
-      <p className="text-xs md:text-sm text-gray-600">Author | 3 hours age</p>
-      <h3 className="text-md md:text-xl font-medium">Lorem ipsum dolor sit amet consectetur</h3>
-      <p className="text-xs md:text-sm text-gray-600">
+      <p className="text-sm md:text-md text-gray-600">Author | 3 hours age</p>
+      <h3 className="text-xl md:text-2xl font-medium">Lorem ipsum dolor sit amet consectetur</h3>
+      <p className="text-sm md:text-md text-gray-600">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
         facere consectetur quidem est.
       </p>
-      <p className="text-xs md:text-sm text-gray-600"><span className="text-red-700 font-medium">Category</span> | 8 min read</p>
+      <p className="text-sm md:text-md text-gray-600"><span className="text-red-700 font-medium">Category</span> | 8 min read</p>
     </div>
   </div>
 );

@@ -10,7 +10,7 @@ const Footer = () => {
               Latest Headlines: Breaking News and Updates
             </h1>
           </div>
-          <div className="flex flex-col gap-1 md:items-end text-xs md:text-sm">
+          <div className="flex flex-col gap-1 md:items-end text-sm md:text-md">
             <p>ADDRESS</p>
             <p>A-4, Paschim Vihar,</p>
             <p>Opp. Paschim Vihar (East) Metro Station,</p>
@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="bg-black text-xs md:text-sm text-gray-300 flex flex-col items-end md:grid md:grid-cols-5 w-1/2 md:w-full gap-2 md:gap-4 !p-6 md:border-y-1 border-gray-500">
+        <div className="bg-black text-sm md:text-md text-gray-300 flex flex-col items-end md:grid md:grid-cols-5 w-1/2 md:w-full gap-2 md:gap-4 !p-6 md:border-y-1 border-gray-500">
           <Link to="/">Home</Link>
           <Link to="/national">National</Link>
           <Link to="/international">International</Link>

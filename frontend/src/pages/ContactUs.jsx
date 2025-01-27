@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
-import { Input, Button, Form, Row, Col, Typography } from "antd";
-import { SunOutlined, MoonOutlined } from "@ant-design/icons";
-// import "./ContactUS.css";
-// import Map from "../map/Map";
-
-const { TextArea } = Input;
-const { Title } = Typography;
 
 const ContactUs = () => {
-  const [theme, setTheme] = useState("light");
   const [captchaQuestion, setCaptchaQuestion] = useState("");
   const [correctAnswer, setCorrectAnswer] = useState(null);
   const [captchaInput, setCaptchaInput] = useState("");
@@ -24,11 +16,8 @@ const ContactUs = () => {
     generateCaptcha();
   }, []);
 
-  const handleThemeToggle = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const userAnswer = parseInt(captchaInput, 10);
     if (userAnswer === correctAnswer) {
       alert("Form submitted successfully!");
@@ -40,91 +29,80 @@ const ContactUs = () => {
   };
 
   return (
-    <div className={`contact-form-container ${theme}`}>
-      <div className="form-wrapper">
-        <div className="theme-toggle">
-          <Button
-            icon={theme === "light" ? <SunOutlined /> : <MoonOutlined />}
-            onClick={handleThemeToggle}
-            type="text"
-          />
-        </div>
-        <Title level={2} className={`form-title ${theme}`}>
-          Contact Us
-        </Title>
-        <Form onFinish={handleSubmit} layout="vertical" className="contact-form">
-          <Row gutter={16}>
-            <Col xs={24} sm={12}>
-              <Form.Item
-                name="name"
-                rules={[{ required: true, message: "Please input your name!" }]}
-              >
-                <Input placeholder="Name" />
-              </Form.Item>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Form.Item
-                name="email"
-                rules={[{ required: true, message: "Please input your email!" }]}
-              >
-                <Input placeholder="Email Address" />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col xs={24} sm={12}>
-              <Form.Item
-                name="contact"
-                rules={[{ required: true, message: "Please input your contact number!" }]}
-              >
-                <Input placeholder="Contact Number" />
-              </Form.Item>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Form.Item
-                name="location"
-                rules={[{ required: true, message: "Please input your location!" }]}
-              >
-                <Input placeholder="Location" />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Form.Item
-            name="subject"
-            rules={[{ required: true, message: "Please input the subject!" }]}
-          >
-            <Input placeholder="Subject" />
-          </Form.Item>
-          <Form.Item
-            name="message"
-            rules={[{ required: true, message: "Please input your message!" }]}
-          >
-            <TextArea rows={4} placeholder="Message" />
-          </Form.Item>
-          <div className="captcha-container">
-            <span className={`captcha-question ${theme}`}>{captchaQuestion}</span>
-            <Input
+    <div className="flex justify-center items-center bg-white !px-6 !py-10">
+      <div className="bg-white !p-8 rounded-lg shadow-lg">
+        <h2 className="text-xl font-medium !mb-6">Contact Us</h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div className="flex flex-col md:flex-row justify-between gap-4">
+            <div className="">
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full !p-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                required
+              />
+            </div>
+            <div className="">
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full !p-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                required
+              />
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row justify-between gap-4">
+            <div className="">
+              <input
+                type="tel"
+                placeholder="Contact Number"
+                className="w-full !p-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                required
+              />
+            </div>
+            <div className="">
+              <input
+                type="text"
+                placeholder="Location"
+                className="w-full !p-2 border text-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+                required
+              />
+            </div>
+          </div>
+          <div className="">
+            <input
+              type="text"
+              placeholder="Subject"
+              className="w-full !p-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+              required
+            />
+          </div>
+          <div className="">
+            <textarea
+              placeholder="Message"
+              rows="4"
+              className="w-full !p-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+              required
+            />
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="text-md text-gray-800 w-1/3 md:w-1/6">{captchaQuestion}</span>
+            <input
+              type="text"
               value={captchaInput}
               onChange={(e) => setCaptchaInput(e.target.value)}
               placeholder="Answer"
-              className="captcha-input"
+              className="w-full !p-2 text-md border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
               maxLength={3}
             />
           </div>
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className={`submit-button ${theme}`}
-              block
-            >
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
-      <div style={{ marginTop: '20px' }}> 
-        {/* <Map />  */}
+          <button
+            type="submit"
+            className="w-full !p-2 text-md bg-red-700 text-white rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );

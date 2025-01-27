@@ -40,7 +40,7 @@ const Navbar = () => {
           </div>
         </div>
         <ul
-          className={`md:flex justify-between !px-6 !py-4 md:!py-2 text-center text-gray-300 ${
+          className={`md:flex justify-between !px-6 !py-4 md:!py-2 text-md text-gray-300 ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
@@ -56,7 +56,7 @@ const Navbar = () => {
             { path: "/sports", label: "Sports" },
             { path: "/more", label: "More" },
           ].map(({ path, label }) => (
-            <li key={path} className="text-right">
+            <li key={path} className="text-right !mb-2 md:!mb-0">
               <NavLink
                 to={path}
                 className={({ isActive }) =>
