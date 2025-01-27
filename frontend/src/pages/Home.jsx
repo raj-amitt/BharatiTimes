@@ -6,10 +6,10 @@ import AdSlider from "../components/AdSlider";
 
 const Home = () => (
   <>
-    <div className="flex gap-4 !p-6 bg-white">
+    <div className="flex gap-4 !px-6 !py-10 bg-white">
       <main className="flex flex-col gap-8 md:gap-10">
         {/* Top News */}
-        <section className="flex flex-col md:flex-row gap-8 md:gap-5">
+        <section className="flex flex-col md:flex-row gap-10">
           <div className="w-full md:w-3/5">
             <BigCard />
           </div>
@@ -21,7 +21,7 @@ const Home = () => (
           </div>
         </section>
 
-        <section className="flex flex-col md:flex-row gap-8 md:gap-5">
+        <section className="flex flex-col md:flex-row gap-10">
           {/* Latest News */}
           <div className="flex flex-col gap-5 md:w-3/4">
             <h2 className="text-xl font-medium">Latest News</h2>
@@ -40,7 +40,7 @@ const Home = () => (
           </div>
         </section>
 
-        <section className="flex flex-col md:flex-row gap-8 md:gap-5">
+        <section className="flex flex-col md:flex-row gap-10">
           {/* National News */}
           <div className="flex flex-col gap-5">
             <h2 className="text-xl font-medium">National News</h2>
