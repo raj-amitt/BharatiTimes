@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-red-700 flex flex-col md:block items-end">
+      <nav className="bg-gray-800 flex flex-col md:block items-end">
         <div className="flex md:hidden justify-between w-full">
           <div className="flex items-center !px-6 text-white text-sm">
             <p>{formattedDate}</p>
@@ -40,7 +40,7 @@ const Navbar = () => {
           </div>
         </div>
         <ul
-          className={`md:flex justify-between !px-6 !py-4 !md:py-2 text-red-100 ${
+          className={`md:flex justify-between !px-6 !py-4 md:!py-2 text-center text-gray-300 ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >

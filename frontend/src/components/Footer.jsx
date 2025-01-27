@@ -10,7 +10,7 @@ const Footer = () => {
               Latest Headlines: Breaking News and Updates
             </h1>
           </div>
-          <div className="flex flex-col gap-2 md:items-end text-xs md:text-sm">
+          <div className="flex flex-col gap-1 md:items-end text-xs md:text-sm">
             <p>ADDRESS</p>
             <p>A-4, Paschim Vihar,</p>
             <p>Opp. Paschim Vihar (East) Metro Station,</p>

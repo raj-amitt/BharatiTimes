@@ -1,9 +1,9 @@
 const MidCard = () => (
-  <div className="rounded-lg shadow-md flex flex-col overflow-hidden bg-white">
+  <div className="rounded-lg flex flex-col overflow-hidden bg-white gap-y-4">
     <div className="">
-      <img src="../../tech.jpg" className="w-full h-48 object-cover" alt="" />
+      <img src="../../tech.jpg" className="w-full h-48 object-cover rounded-lg" alt="" />
     </div>
-    <div className="flex flex-col justify-center gap-2 !m-4">
+    <div className="flex flex-col justify-center gap-2">
       <p className="text-xs md:text-sm text-gray-600">Author | 3 hours age</p>
       <h3 className="text-md md:text-xl font-medium">Lorem ipsum dolor sit amet consectetur</h3>
       <p className="text-xs md:text-sm text-gray-600">
