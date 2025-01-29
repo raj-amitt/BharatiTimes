@@ -9,62 +9,66 @@ import AdSlider from "../components/AdSlider";
 import BreakingSlider from "../components/BreakingSlider";
 
 const Home = () => (
-  <div className="flex gap-4 !px-6 !py-10 bg-white">
-    <main className="flex flex-col gap-8 md:gap-10">
-      <section className="flex flex-col md:flex-row md:items-center gap-10">
-        {/* Top News */}
-        <div className="w-full md:w-3/5">
-          <BigCard />
-        </div>
-        {/* National News */}
-        <div className="w-full md:w-2/5">
-          <div className="flex flex-col gap-8 md:gap-5">
-            <div className="flex justify-between items-center">
-              <h2 className="text-xl font-medium">National News</h2>
-              <div className="flex items-center gap-1 text-red-700 hover:text-gray-600">
-                <Link to="/national" className="text-sm font-medium">
-                  Show More
-                </Link>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                  />
-                </svg>
+  <>
+    <div className="!mt-6">
+      <BreakingSlider />
+    </div>
+    <div className="flex gap-4 !px-6 !py-10 bg-white">
+      <main className="flex flex-col gap-8 md:gap-10">
+        <section className="flex flex-col md:flex-row md:items-center gap-10">
+          {/* Top News */}
+          <div className="w-full md:w-3/5">
+            <BigCard />
+          </div>
+          {/* National News */}
+          <div className="w-full md:w-2/5">
+            <div className="flex flex-col gap-8 md:gap-5">
+              <div className="flex justify-between items-center">
+                <h2 className="text-xl font-medium">National News</h2>
+                <div className="flex items-center gap-1 text-red-700 hover:text-gray-600">
+                  <Link to="/national" className="text-sm font-medium">
+                    Show More
+                  </Link>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <SideCard />
+              <SideCard />
+            </div>
+          </div>
+        </section>
+
+        <section className="flex flex-col md:flex-row gap-10">
+          {/* Latest News */}
+          <div className="flex flex-col gap-5 md:w-3/4">
+            <h2 className="text-xl font-medium">Latest News</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              <MidCard />
+              <MidCard />
+              <div className="hidden md:block">
+                <MidCard />
               </div>
             </div>
-            <SideCard />
-            <SideCard />
           </div>
-        </div>
-      </section>
-
-      <section className="flex flex-col md:flex-row gap-10">
-        {/* Latest News */}
-        <div className="flex flex-col gap-5 md:w-3/4">
-          <h2 className="text-xl font-medium">Latest News</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-            <MidCard />
-            <MidCard />
-            <div className="hidden md:block">
-              <MidCard />
-            </div>
+          {/* Advertisement */}
+          <div className="md:w-1/4 bg-gray-800 flex flex-col justify-between items-center !py-2 rounded-xl overflow-hidden">
+            <h2 className="text-white text-center">Advertisement</h2>
+            <AdSlider />
           </div>
-        </div>
-        {/* Advertisement */}
-        <div className="md:w-1/4 bg-gray-800 flex flex-col justify-between items-center !py-2 rounded-xl overflow-hidden">
-          <h2 className="text-white text-center">Advertisement</h2>
-          <AdSlider />
-        </div>
-      </section>
+        </section>
 
         <section className="flex flex-col md:flex-row gap-10">
           {/* International News */}
