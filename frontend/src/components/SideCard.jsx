@@ -1,5 +1,5 @@
 const SideCard = () => (
-    <div className="rounded-lg flex overflow-hidden bg-white group">
+    <div className="rounded-lg flex gap-2 overflow-hidden bg-white group">
       <div className="flex flex-col justify-center gap-1 w-1/2">
         <p className="text-sm md:text-md text-gray-600">Author | 3 hours age</p>
         <h3 className="text-xl md:text-2xl font-medium">Lorem ipsum dolor sit amet consectetur</h3>

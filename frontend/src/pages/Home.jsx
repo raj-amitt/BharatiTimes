@@ -90,10 +90,10 @@ const Home = () => (
               </svg>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
             <SmallCard />
             <SmallCard />
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <SmallCard />
             </div>
           </div>
@@ -122,17 +122,17 @@ const Home = () => (
               </svg>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
             <SmallCard />
             <SmallCard />
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <SmallCard />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row md:items-center gap-10">
+      <section className="flex flex-col md:flex-row md:items-start gap-10">
         {/* Business & Economics News */}
         <div className="w-full md:w-3/5 flex flex-col gap-8 md:gap-5">
           <div className="flex justify-between items-center">
@@ -276,13 +276,17 @@ const Home = () => (
               </svg>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-5">
             <SmallCard />
             <SmallCard />
             <SmallCard />
             <SmallCard />
-            <SmallCard />
-            <SmallCard />
+            <div className="hidden lg:flex">
+              <SmallCard />
+            </div>
+            <div className="hidden lg:flex">
+              <SmallCard />
+            </div>
           </div>
         </div>
       </section>
