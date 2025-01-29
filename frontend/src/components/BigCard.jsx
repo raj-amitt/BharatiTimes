@@ -15,7 +15,7 @@ const BigCard = () => (
     <div className="relative overflow-hidden rounded-lg">
       <img
         src="../../tech.jpg"
-        className="w-full h-48 md:h-64 object-cover rounded-lg transform transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-48 lg:h-60 object-cover rounded-lg transform transition-transform duration-500 group-hover:scale-110"
         alt=""
       />
     </div>

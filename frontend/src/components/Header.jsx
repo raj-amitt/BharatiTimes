@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const [dateTime, setDateTime] = useState(new Date());
@@ -28,14 +27,15 @@ const Header = () => {
 
   return (
     <header className="block md:flex justify-center md:justify-between !p-6">
-      <div className="hidden md:flex items-center w-1/5">
+      <div className="hidden lg:flex items-center w-1/5">
         <img className="w-48" src="../../logoo.png" alt="" />
       </div>
-      <div className="flex justify-center w-full md:w-1/3">
+      <div className="flex justify-center w-full md:w-1/3 lg:w-2/5">
         <img src="../../logo.png" alt="bharati-times-logo" loading="lazy" />
       </div>
-      <div className="hidden md:flex justify-end items-center gap-4 w-1/5">
-        <p className="text-right">{formattedDate}, {formattedTime}</p>
+      <div className="hidden md:flex md:flex-col justify-center items-end gap-1 md:w-1/3 lg:w-1/5">
+        <p className="text-right">{formattedDate}</p>
+        <p className="text-right">{formattedTime}</p>
       </div>
     </header>
   );

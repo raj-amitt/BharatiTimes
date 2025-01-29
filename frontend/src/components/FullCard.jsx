@@ -45,7 +45,7 @@ const FullCard = () => {
   return (
     <div className="relative w-full">
       {/* Card */}
-      <div className="relative rounded-lg overflow-hidden bg-white text-white h-86 group">
+      <div className="relative rounded-lg overflow-hidden bg-white text-white h-64 md:h-80 group">
         {/* Background Image */}
         <img
           src={currentCard.image}

@@ -9,10 +9,6 @@ const Navbar = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const toggleMoreMenu = () => {
-    setIsMoreOpen((prev) => !prev);
-  };
-
   const today = new Date();
   const formattedDate = today.toLocaleDateString("en-US", {
     year: "numeric",
@@ -22,9 +18,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gray-800 flex flex-col md:block items-end relative">
+      <nav className="bg-gray-800 flex flex-col lg:block items-end relative">
         {/* Mobile Header */}
-        <div className="flex md:hidden justify-between w-full">
+        <div className="flex lg:hidden justify-between w-full">
           <div className="flex items-center !px-6 text-white text-sm">
             <p>{formattedDate}</p>
           </div>
@@ -48,7 +44,7 @@ const Navbar = () => {
 
         {/* Main Navigation */}
         <ul
-          className={`md:flex justify-between !px-6 !py-4 md:!py-2 text-md text-gray-300 ${
+          className={`lg:flex justify-between !px-6 !py-4 lg:!py-2 text-md text-gray-300 ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
@@ -63,7 +59,7 @@ const Navbar = () => {
             { path: "/aboutus", label: "About" },
             { path: "/contactus", label: "Contact" },
           ].map(({ path, label }) => (
-            <li key={path} className="text-right !mb-2 md:!mb-0">
+            <li key={path} className="text-right !mb-2 lg:!mb-0">
               <NavLink
                 to={path}
                 className={({ isActive }) =>
@@ -99,7 +95,7 @@ const Navbar = () => {
 
           {/* More Dropdown (Only for md and larger screens) */}
           <li
-            className="relative text-right mb-2 md:mb-0 cursor-pointer hidden md:block"
+            className="relative text-right mb-2 lg:mb-0 cursor-pointer hidden lg:block"
             onMouseEnter={() => setIsMoreOpen(true)}
             onMouseLeave={() => setIsMoreOpen(false)}
           >
@@ -134,7 +130,10 @@ const Navbar = () => {
                 { path: "/archive", label: "Archive" },
                 { path: "/login", label: "Login" },
               ].map(({ path, label }) => (
-                <li key={path} className="border-b border-gray-600 last:border-none">
+                <li
+                  key={path}
+                  className="border-b border-gray-600 last:border-none"
+                >
                   <NavLink
                     to={path}
                     className="block !px-4 !py-2 hover:bg-gray-600"

@@ -10,7 +10,7 @@ import AdSlider from "../components/AdSlider";
 const Home = () => (
   <div className="flex gap-4 !px-6 !py-10 bg-white">
     <main className="flex flex-col gap-8 md:gap-10">
-      <section className="flex flex-col md:flex-row md:items-center gap-10">
+      <section className="flex flex-col md:flex-row md:items-start gap-10">
         {/* Top News */}
         <div className="w-full md:w-3/5">
           <BigCard />
@@ -59,7 +59,7 @@ const Home = () => (
           </div>
         </div>
         {/* Advertisement */}
-        <div className="md:w-1/4 bg-gray-800 flex flex-col justify-between items-center !py-2 rounded-xl overflow-hidden">
+        <div className="md:w-1/4 md:h-84 lg:h-104 bg-gray-800 flex flex-col justify-between items-center !py-2 rounded-xl overflow-hidden">
           <h2 className="text-white text-center">Advertisement</h2>
           <AdSlider />
         </div>
