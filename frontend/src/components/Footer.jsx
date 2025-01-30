@@ -1,36 +1,98 @@
 import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="flex flex-col bg-black">
       <div className="flex md:flex-col border-b-1 border-gray-500">
-        <div className="bg-black text-white flex flex-col md:flex-row w-1/2 md:w-full justify-between gap-4 !p-6">
-          <div className="md:w-1/3">
-            <h1 className="text-xl md:text-3xl">
-              Latest Headlines: Breaking News and Updates
-            </h1>
-          </div>
-          <div className="flex flex-col gap-1 md:items-end text-sm md:text-md">
-            <p>ADDRESS</p>
-            <p>A-4, Paschim Vihar,</p>
-            <p>Opp. Paschim Vihar (East) Metro Station,</p>
-            <p>Rohtak Road, New Delhi, Delhi 110063</p>
-          </div>
-        </div>
+        <div className="bg-black text-white flex flex-col md:flex-row w-full justify-between gap-6 !p-6">
+          
+          <div className="flex gap-20 w-full md:w-1/2 justify-between md:justify-start">
+            <div className="flex flex-col gap-3">
+              <h1 className="text-base md:text-2xl">Social Links</h1>
+              <div className="flex flex-col gap-2 text-gray-400 text-sm md:text-base">
+                <a
+                  href="https://www.facebook.com/people/Bvicam-New-Delhi/100075344976453/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-gray-300"
+                >
+                  <FaFacebook className="text-lg" /> Facebook
+                </a>
 
-        <div className="bg-black text-sm md:text-md text-gray-300 flex flex-col items-end md:grid md:grid-cols-5 w-1/2 md:w-full gap-2 md:gap-4 !p-6 md:border-y-1 border-gray-500">
-          <Link to="/">Home</Link>
-          <Link to="/national">National</Link>
-          <Link to="/international">International</Link>
-          <Link to="/science">Science & Tech</Link>
-          <Link to="/business">Business & Economics</Link>
-          <Link to="/education">Education</Link>
-          <Link to="/health">Health</Link>
-          <Link to="/entertainment">Entertainment</Link>
-          <Link to="/sports">Sports</Link>
-          <Link to="/more">More</Link>
-          <Link to="/aboutus">About</Link>
-          <Link to="/contactus">Contact</Link>
+                <a
+                  href="https://www.instagram.com/ibvicam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-gray-300"
+                >
+                  <FaInstagram className="text-lg" /> Instagram
+                </a>
+
+                <a
+                  href="https://www.youtube.com/@bvicamnewdelhi6802"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-gray-300"
+                >
+                  <FaYoutube className="text-lg" /> YouTube
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/bvicam-new-delhi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-gray-300"
+                >
+                  <FaLinkedin className="text-lg" /> LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 items-end md:items-start text-right md:text-left">
+              <h1 className="text-base md:text-2xl">Important Links</h1>
+              <div className="flex flex-col gap-2 text-gray-400 text-sm md:text-base">
+                <Link to="/aboutus" className="hover:text-gray-300">
+                  About
+                </Link>
+                <Link to="/contactus" className="hover:text-gray-300">
+                  Contact
+                </Link>
+                <a
+                  href="http://www.ipu.ac.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300"
+                >
+                  GGSIPU
+                </a>
+                <a
+                  href="https://www.ugc.gov.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-300"
+                >
+                  UGC
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Google Map Embed */}
+          <div className="w-full md:w-1/2">
+            <h1 className="text-base md:text-2xl md:text-right !mb-3">
+              Our Location
+            </h1>
+            <div className="flex md:justify-end">
+              <iframe
+                className="w-full lg:w-2/3 md:h-52 rounded-lg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.4726849450462!2d77.1106680739007!3d28.675503682130977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d038b9232e7cd%3A0x34ebc68df4428491!2sBharati%20Vidyapeeth&#39;s%20Institute%20of%20Computer%20Applications%20and%20Management%20(BVICAM)!5e0!3m2!1sen!2sin!4v1738227083951!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -44,7 +106,7 @@ const Footer = () => {
       </div>
 
       <div className="text-white bg-black text-center !py-2">
-        <p className="text-sm md:text-md">
+        <p className="text-sm md:text-base">
           © {new Date().getFullYear()} Bharati Times. All rights reserved.
         </p>
       </div>

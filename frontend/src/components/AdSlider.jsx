@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const AdSlider = () => {
-  const ads = ["../../ad1.jpg", "../../ad2.jpg", "../../ad3.jpg"];
+  const ads = ["../../ad2.jpg", "../../ad3.jpg"];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

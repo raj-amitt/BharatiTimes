@@ -6,9 +6,9 @@ const Header = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setDateTime(new Date());
-    }, 1000); // Update time every second
+    }, 1000);
 
-    return () => clearInterval(timer); // Cleanup timer on unmount
+    return () => clearInterval(timer);
   }, []);
 
   const formattedDate = dateTime.toLocaleDateString("en-US", {
@@ -26,9 +26,9 @@ const Header = () => {
   });
 
   return (
-    <header className="block md:flex justify-center md:justify-between !p-6">
+    <header className="block md:flex justify-center md:justify-between !px-6 !py-4">
       <div className="hidden lg:flex items-center w-1/5">
-        <img className="w-48" src="../../logoo.png" alt="" />
+        <img className="w-40" src="../../logoo.png" alt="" />
       </div>
       <div className="flex justify-center w-full md:w-1/3 lg:w-2/5">
         <img src="../../logo.png" alt="bharati-times-logo" loading="lazy" />
