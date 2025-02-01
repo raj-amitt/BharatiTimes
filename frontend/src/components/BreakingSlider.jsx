@@ -31,7 +31,7 @@ const BreakingSlider = () => {
   }, []);
 
   return (
-    <div className="flex items-center bg-gray-300 w-full overflow-hidden">
+    <div className="flex items-center bg-white border w-full overflow-hidden">
       {/* Fixed Box on the Left */}
       <div className="bg-red-600 !py-2 !px-6 text-sm md:text-md font-bold w-2/5 md:w-1/5 text-white">
         Breaking Now:

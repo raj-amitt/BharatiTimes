@@ -18,10 +18,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gray-800 flex flex-col lg:block items-end relative">
+      <nav className="bg-gray-300 flex flex-col lg:block items-end relative">
         {/* Mobile Header */}
         <div className="flex lg:hidden justify-between w-full">
-          <div className="flex items-center !px-6 text-white text-sm">
+          <div className="flex items-center !px-6 text-gray-900 text-sm">
             <p>{formattedDate}</p>
           </div>
           <div className="cursor-pointer !px-6 !py-2" onClick={toggleMenu}>
@@ -31,7 +31,7 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-6 text-white"
+              className="size-6 text-gray-900"
             >
               <path
                 strokeLinecap="round"
@@ -44,7 +44,7 @@ const Navbar = () => {
 
         {/* Main Navigation */}
         <ul
-          className={`lg:flex justify-between !px-6 !py-4 lg:!py-2 text-md text-gray-300 ${
+          className={`lg:flex justify-between !px-6 !py-4 lg:!py-2 text-md text-gray-700 ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
@@ -63,7 +63,7 @@ const Navbar = () => {
               <NavLink
                 to={path}
                 className={({ isActive }) =>
-                  `${isActive ? "text-white font-bold" : "hover:text-white"}`
+                  `${isActive ? "text-gray-900 font-bold" : "hover:text-gray-900 hover:font-medium"}`
                 }
               >
                 {label}
@@ -84,7 +84,7 @@ const Navbar = () => {
                 <NavLink
                   to={path}
                   className={({ isActive }) =>
-                    `${isActive ? "text-white font-bold" : "hover:text-white"}`
+                    `${isActive ? "text-gray-700 font-bold" : "hover:text-gray-900 hover:font-medium"}`
                   }
                 >
                   {label}
@@ -99,7 +99,7 @@ const Navbar = () => {
             onMouseEnter={() => setIsMoreOpen(true)}
             onMouseLeave={() => setIsMoreOpen(false)}
           >
-            <button className="hover:text-white flex items-center">
+            <button className="hover:text-gray-700 flex items-center">
               More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ const Navbar = () => {
 
             {/* Dropdown Menu (Aligned to Right) */}
             <ul
-              className={`absolute right-0 mt-2 w-48 bg-gray-700 text-white shadow-lg z-50 rounded-md transition-all ${
+              className={`absolute right-0 mt-2 w-48 bg-gray-300 text-gray-700 border border-gray-500 shadow-lg z-50 rounded-md transition-all ${
                 isMoreOpen ? "block" : "hidden"
               }`}
             >
@@ -132,11 +132,11 @@ const Navbar = () => {
               ].map(({ path, label }) => (
                 <li
                   key={path}
-                  className="border-b border-gray-600 last:border-none"
+                  className=""
                 >
                   <NavLink
                     to={path}
-                    className="block !px-4 !py-2 hover:bg-gray-600"
+                    className="block !px-4 !py-2 hover:text-gray-900 hover:font-medium"
                   >
                     {label}
                   </NavLink>
