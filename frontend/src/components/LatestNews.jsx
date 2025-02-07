@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 const LatestNews = () => {
   const news = [
-    { title: "Breaking: AI surpasses human intelligence", category: "Technology" },
+    {
+      title: "Breaking: AI surpasses human intelligence",
+      category: "Technology",
+    },
     { title: "Stock markets see a sharp rise", category: "Finance" },
     { title: "Scientists discover an exoplanet", category: "Science" },
     { title: "Tech giants unveil next-gen AI chips", category: "Technology" },
@@ -35,7 +38,10 @@ const LatestNews = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-68 overflow-hidden bg-gray-100 rounded-lg border-5 border-gray-500">
+    <div className="relative w-full h-80 overflow-hidden bg-gray-100 rounded-lg border">
+      <div className="!px-4 !py-2 bg-white border-b">
+        <h2 className="text-xl font-medium">Latest News</h2>
+      </div>
       <div ref={scrollRef} className="h-full overflow-hidden">
         <div className="flex flex-col space-y-3 animate-scroll">
           {news.concat(news).map((item, i) => (

@@ -1,5 +1,5 @@
-// import { Link } from "react-router-dom";
-
+import AdSlider from "../components/AdSlider";
+import LatestNews from "../components/LatestNews";
 import MidCard from "../components/MidCard";
 import SmallCard from "../components/SmallCard";
 import BigCard from "../components/BigCard";
@@ -17,6 +17,15 @@ const National = () => {
         </div>
 
         <section className="flex flex-col md:flex-row md:items-center gap-10">
+          <div className="w-full md:w-3/5">
+            <AdSlider />
+          </div>
+          <div className="w-full md:w-2/5 flex flex-col gap-5">
+            <LatestNews />
+          </div>
+        </section>
+
+        <section className="flex flex-col md:flex-row md:items-center gap-10">
           {/* Top News */}
           <div className="w-full md:w-3/5">
             <BigCard />
@@ -27,18 +36,6 @@ const National = () => {
               <SideCard />
               <SideCard />
             </div>
-          </div>
-        </section>
-
-        <section className="flex flex-col md:flex-row justify-between gap-10">
-          <div className="md:w-1/5">
-            <img src="../../ad1.jpg" alt="" />
-          </div>
-          <div className="md:w-11/20">
-            <img src="../../ad3.jpg" alt="" />
-          </div>
-          <div className="md:w-1/4 flex flex-col gap-5">
-            <img src="../../ad2.jpg" alt="" />
           </div>
         </section>
 

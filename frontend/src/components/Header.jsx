@@ -33,7 +33,7 @@ const Header = () => {
       <div className="flex justify-center w-full md:w-1/3 lg:w-2/5">
         <img src="../../logo.png" alt="bharati-times-logo" loading="lazy" />
       </div>
-      <div className="hidden md:flex md:flex-col justify-center items-end gap-1 md:w-1/3 lg:w-1/5">
+      <div className="hidden md:flex md:flex-col justify-center items-end gap-1 md:w-1/3 lg:w-1/5 text-sm font-bold text-gray-700">
         <p className="text-right">{formattedDate}</p>
         <p className="text-right">{formattedTime}</p>
       </div>

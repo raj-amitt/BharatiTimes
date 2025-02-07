@@ -22,7 +22,7 @@ const Navbar = () => {
         {/* Mobile Header */}
         <div className="flex lg:hidden justify-between w-full">
           <div className="flex items-center !px-6 text-gray-900 text-sm">
-            <p>{formattedDate}</p>
+            <p className="text-sm font-bold text-gray-700">{formattedDate}</p>
           </div>
           <div className="cursor-pointer !px-6 !py-2" onClick={toggleMenu}>
             <svg

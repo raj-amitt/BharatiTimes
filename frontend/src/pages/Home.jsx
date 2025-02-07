@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
+import AdSlider from "../components/AdSlider";
+import LatestNews from "../components/LatestNews";
 import MidCard from "../components/MidCard";
 import SmallCard from "../components/SmallCard";
 import SideCard from "../components/SideCard";
 import FullCard from "../components/FullCard";
 import BreakingSlider from "../components/BreakingSlider";
-import LatestNews from "../components/LatestNews";
 
 const Home = () => (
   <>
@@ -15,25 +16,11 @@ const Home = () => (
     <div className="flex gap-4 !px-6 !py-10 bg-white">
       <main className="flex flex-col gap-8 md:gap-10">
         <section className="flex flex-col md:flex-row md:items-center gap-10">
-          {/* Top News */}
           <div className="w-full md:w-3/5">
-            <FullCard />
+            <AdSlider />
           </div>
           <div className="w-full md:w-2/5 flex flex-col gap-5">
-            <h2 className="text-xl font-medium">Latest News</h2>
             <LatestNews />
-          </div>
-        </section>
-
-        <section className="flex flex-col md:flex-row justify-between gap-10">
-          <div className="md:w-1/5">
-            <img src="../../ad1.jpg" alt="" />
-          </div>
-          <div className="md:w-11/20">
-            <img src="../../ad3.jpg" alt="" />
-          </div>
-          <div className="md:w-1/4 flex flex-col gap-5">
-            <img src="../../ad2.jpg" alt="" />
           </div>
         </section>
 
