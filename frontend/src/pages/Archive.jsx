@@ -1,60 +1,59 @@
-import { useState } from "react";
-import { Document, Page } from "react-pdf";
-import { pdfjs } from "react-pdf";
-import HTMLFlipBook from "react-pageflip";
+import PdfCard from "../components/PdfCard";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+const newspapers = [
+  {
+    id: 1,
+    title: "Newspaper 1",
+    date: "2025-02-07",
+    pdfLink: "/Volume-1-Issue-63.pdf",
+  },
+  {
+    id: 2,
+    title: "Newspaper 2",
+    date: "2025-02-06",
+    pdfLink: "/Volume-1-Issue-64.pdf",
+  },
+  {
+    id: 3,
+    title: "Newspaper 3",
+    date: "2025-02-05",
+    pdfLink: "/Volume-1-Issue-65.pdf",
+  },
+  {
+    id: 4,
+    title: "Newspaper 4",
+    date: "2025-02-04",
+    pdfLink: "/Volume-1-Issue-66.pdf",
+  },
+  {
+    id: 5,
+    title: "Newspaper 5",
+    date: "2025-02-03",
+    pdfLink: "/Volume-1-Issue-67.pdf",
+  },
+];
 
 const Archive = () => {
-  const [selectedPDF, setSelectedPDF] = useState(null);
-
-  const newspaperVolumes = [
-    { id: 1, title: "Volume 1 - Jan 2025", file: "../../Volume-1-Issue-67.pdf" },
-    { id: 2, title: "Volume 2 - Feb 2025", file: "/pdfs/volume2.pdf" },
-    { id: 3, title: "Volume 3 - Mar 2025", file: "/pdfs/volume3.pdf" },
-  ];
-
   return (
-    <div className="!p-8 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-center !mb-6">Newspaper Archives</h1>
-
-      {/* Newspaper Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {newspaperVolumes.map((volume) => (
-          <div
-            key={volume.id}
-            className="bg-white shadow-lg p-4 rounded-lg text-center cursor-pointer hover:shadow-xl transition"
-            onClick={() => setSelectedPDF(volume.file)}
-          >
-            <h2 className="text-lg font-semibold">{volume.title}</h2>
-          </div>
-        ))}
-      </div>
-
-      {/* PDF Viewer */}
-      {selectedPDF && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center !p-4">
-          <div className="bg-white !p-6 rounded-lg shadow-lg max-w-3xl !w-full">
-            <button
-              className="absolute top-4 right-4 text-red-500 font-bold"
-              onClick={() => setSelectedPDF(null)}
-            >
-              ✖ Close
-            </button>
-
-            {/* Flipbook */}
-            <HTMLFlipBook width={500} height={700} className="border shadow-md">
-              {[1, 2, 3, 4, 5].map((page) => (
-                <div key={page} className="!p-4 bg-white">
-                  <Document file={selectedPDF}>
-                    <Page pageNumber={page} />
-                  </Document>
-                </div>
-              ))}
-            </HTMLFlipBook>
-          </div>
+    <div className="flex gap-4 !px-10 !py-10 bg-white">
+      <main className="flex flex-col w-full gap-8 md:gap-10">
+        <div>
+          <h2 className="text-xl font-medium inline tracking-widest">ARCHIVE</h2>
         </div>
-      )}
+
+        <section className="flex flex-col gap-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+            {newspapers.map((paper) => (
+              <PdfCard
+                key={paper.id}
+                title={paper.title}
+                date={paper.date}
+                pdfUrl={paper.pdfLink}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

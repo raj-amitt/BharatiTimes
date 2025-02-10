@@ -30,7 +30,7 @@ const ContactUs = () => {
 
   return (
     <div className="flex justify-center items-center bg-white !px-6 !py-10">
-      <div className="bg-white !p-8 rounded-lg shadow-lg">
+      <div className="bg-white !p-8 rounded-lg shadow-lg border border-gray-200">
         <h2 className="text-xl font-medium !mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="flex flex-col md:flex-row justify-between gap-4">
@@ -98,7 +98,7 @@ const ContactUs = () => {
           </div>
           <button
             type="submit"
-            className="w-full !p-2 text-md bg-red-700 text-white rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
+            className="w-full !p-2 text-md bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-700 focus:outline-none"
           >
             Submit
           </button>

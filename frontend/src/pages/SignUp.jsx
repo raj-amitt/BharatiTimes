@@ -1,7 +1,7 @@
 const SignUp = () => {
     return (
       <div className="flex justify-center items-center bg-white !px-6 !py-10">
-        <div className="bg-white shadow-lg rounded-lg !p-8 w-full max-w-md">
+        <div className="bg-white shadow-lg rounded-lg !p-8 w-full max-w-md border border-gray-200">
           <h2 className="text-2xl font-bold text-center text-gray-800 !mb-6">Create an Account</h2>
   
           <form>

@@ -18,6 +18,7 @@ import Login from "./pages/Login";
 import Footer from './components/Footer'
 import SignUp from "./pages/SignUp";
 
+
 function App() {
   return (
     <Router>
