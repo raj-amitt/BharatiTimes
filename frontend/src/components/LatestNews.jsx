@@ -1,19 +1,8 @@
+import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-const LatestNews = () => {
-  const news = [
-    {
-      title: "Breaking: AI surpasses human intelligence",
-      category: "Technology",
-    },
-    { title: "Stock markets see a sharp rise", category: "Finance" },
-    { title: "Scientists discover an exoplanet", category: "Science" },
-    { title: "Tech giants unveil next-gen AI chips", category: "Technology" },
-    { title: "Breakthrough in renewable energy", category: "Energy" },
-    { title: "Promising results for cancer treatment", category: "Health" },
-    { title: "Climate change effects accelerating", category: "Environment" },
-  ];
+const LatestNews = ({ articles }) => {
 
   const scrollRef = useRef(null);
 
@@ -37,15 +26,17 @@ const LatestNews = () => {
     return () => clearInterval(interval);
   }, []);
 
+  if (!articles || articles.length === 0) return null;
+
   return (
     <div className="relative w-full h-80 overflow-hidden bg-gray-100 rounded-lg border">
       <div className="!px-4 !py-2 bg-white border-b">
         <h2 className="text-xl font-medium">Latest News</h2>
       </div>
       <div ref={scrollRef} className="h-full overflow-hidden">
-        <div className="flex flex-col space-y-3 animate-scroll">
-          {news.concat(news).map((item, i) => (
-            <div key={i} className="flex flex-col !px-4 !py-2">
+        <div className="flex flex-col !space-y-4 animate-scroll">
+          {articles.concat(articles).map((item, i) => (
+            <div key={i} className="flex flex-col !px-4">
               <Link className="text-md md:text-lg text-blue-900 hover:text-blue-500 font-medium">
                 {item.title}
               </Link>
@@ -56,6 +47,15 @@ const LatestNews = () => {
       </div>
     </div>
   );
+};
+
+LatestNews.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default LatestNews;

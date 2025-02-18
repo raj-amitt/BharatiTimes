@@ -17,6 +17,7 @@ import Archive from "./pages/Archive";
 import Login from "./pages/Login";
 import Footer from './components/Footer'
 import SignUp from "./pages/SignUp";
+import Article from "./pages/Article";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/archive" element={<Archive />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/article/:id" element={<Article />} />
       </Routes>
       <Footer />
     </Router>
