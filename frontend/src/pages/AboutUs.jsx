@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Microscope,
   Newspaper,
@@ -59,6 +60,10 @@ const AboutUs = () => {
       desc: "Explore international developments and insights.",
     },
   ];
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <div className="flex flex-col bg-white">

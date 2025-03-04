@@ -28,10 +28,6 @@
       "type": "string",
       "required": true
     },
-    "publishedTime": {
-      "type": "datetime",
-      "required": true
-    },
     "body": {
       "type": "richtext",
       "required": true
@@ -44,6 +40,11 @@
       "type": "integer",
       "required": true,
       "min": 1
+    },
+    "isBreakingNews": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

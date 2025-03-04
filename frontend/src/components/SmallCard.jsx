@@ -1,65 +1,74 @@
 import PropTypes from "prop-types";
 import { formatDistanceToNowStrict } from "date-fns";
+import { Link } from "react-router-dom";
 
 const SmallCard = ({ article }) => {
   if (!article) return null;
 
-  const { title, coverImage, author, publishedTime, category, timeToRead } =
+  const { id, title, coverImage, author, createdAt, category, timeToRead } =
     article;
 
-    const formattedPublishedTime = publishedTime
-    ? formatDistanceToNowStrict(new Date(publishedTime), { addSuffix: true })
+  const formattedcreatedAt = createdAt
+    ? formatDistanceToNowStrict(new Date(createdAt), { addSuffix: true })
     : "Recently";
 
-    const coverImageUrl = coverImage ? `http://localhost:1337${coverImage.url}` : "../../tech.jpg";
+  const coverImageUrl = coverImage
+    ? `http://localhost:1337${coverImage.url}`
+    : "../../tech.jpg";
 
   return (
-    <div className="rounded-lg flex flex-col overflow-hidden bg-white gap-y-4 group">
-      {/* Article Image */}
-      <div className="relative overflow-hidden rounded-lg">
-        <img
-          src={coverImageUrl} 
-          className="w-full h-32 object-cover rounded-lg transform transition-transform duration-500 group-hover:scale-110"
-          alt={title}
-        />
-      </div>
+    <Link to={`/article/${id}`} className="block">
+      <div className="rounded-lg flex flex-col overflow-hidden bg-white gap-y-4 group">
+        {/* Article Image */}
+        <div className="relative overflow-hidden rounded-lg">
+          <img
+            src={coverImageUrl}
+            className="w-full h-32 object-cover object-top rounded-lg transform transition-transform duration-500 group-hover:scale-110"
+            alt={title}
+          />
+        </div>
 
-      {/* Article Details */}
-      <div className="flex flex-col justify-center gap-1">
-        <p className="text-sm md:text-md text-gray-600">
-          {author || "Unknown Author"} | {formattedPublishedTime}
-        </p>
+        {/* Article Details */}
+        <div className="flex flex-col justify-center gap-1">
+          <div className="inline lg:flex lg:flex-col xl:inline text-sm md:text-md text-gray-600">
+            <span>{author || "Unknown Author"}</span>
+            <span className="inline lg:hidden xl:inline"> | </span>
+            <span>{formattedcreatedAt}</span>
+          </div>
 
-        <h3 className="text-md md:text-xl font-medium smallcard-title">{title}</h3>
+          <h3 className="text-md md:text-xl font-medium smallcard-title">
+            {title}
+          </h3>
 
-        <div className="flex flex-col md:inline">
-          <span className="text-red-700 font-medium text-sm md:text-md">
-            {category || "General"}
-          </span>
-          <span className="text-gray-600 hidden md:inline text-sm md:text-md">
-            {" "}
-            |{" "}
-          </span>
-          <span className="text-gray-600 text-sm md:text-md">
-            {timeToRead ? `${timeToRead} min read` : "Reading time unavailable"}
-          </span>
+          <div className="inline lg:flex lg:flex-col xl:inline text-sm md:text-md text-gray-600">
+            <span className="text-red-700 font-medium ">
+              {category || "General"}
+            </span>
+            <span className="inline lg:hidden xl:inline"> | </span>
+            <span className="">
+              {timeToRead
+                ? `${timeToRead} min read`
+                : "Reading time unavailable"}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
 SmallCard.propTypes = {
   article: PropTypes.shape({
-      title: PropTypes.string,
-      coverImage: PropTypes.shape({
-        url: PropTypes.string,
-      }),
-      author: PropTypes.string,
-      publishedTime: PropTypes.string,
-      category: PropTypes.string,
-      timeToRead: PropTypes.number,
-      body: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string,
+    coverImage: PropTypes.shape({
+      url: PropTypes.string,
+    }),
+    author: PropTypes.string,
+    createdAt: PropTypes.string,
+    category: PropTypes.string,
+    timeToRead: PropTypes.number,
+    body: PropTypes.string,
   }),
 };
 

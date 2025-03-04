@@ -28,6 +28,10 @@ const LatestNews = ({ articles }) => {
 
   if (!articles || articles.length === 0) return null;
 
+  const sortedArticles = [...articles].sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  ).slice(0, 5);
+
   return (
     <div className="relative w-full h-80 overflow-hidden bg-gray-100 rounded-lg border">
       <div className="!px-4 !py-2 bg-white border-b">
@@ -35,9 +39,9 @@ const LatestNews = ({ articles }) => {
       </div>
       <div ref={scrollRef} className="h-full overflow-hidden">
         <div className="flex flex-col !space-y-4 animate-scroll">
-          {articles.concat(articles).map((item, i) => (
+          {sortedArticles.concat(sortedArticles).map((item, i) => (
             <div key={i} className="flex flex-col !px-4">
-              <Link className="text-md md:text-lg text-blue-900 hover:text-blue-500 font-medium">
+              <Link to={`/article/${item.id}`} className="text-md md:text-lg text-blue-900 hover:text-blue-500 font-medium">
                 {item.title}
               </Link>
               <span className="text-sm text-gray-600">{item.category}</span>
@@ -52,8 +56,10 @@ const LatestNews = ({ articles }) => {
 LatestNews.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
+      createdAt: PropTypes.string,
     })
   ).isRequired,
 };

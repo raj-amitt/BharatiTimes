@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@theme inline{
+  --breakpoint-xs: 480px;
+}
 
 * {
   box-sizing: border-box;

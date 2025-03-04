@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 const SideCard = ({ article }) => {
   if (!article) return null;
 
-  const { id, title, coverImage, author, publishedTime, category, timeToRead } =
+  const { id, title, coverImage, author, createdAt, category, timeToRead } =
     article;
 
-  const formattedPublishedTime = publishedTime
-    ? formatDistanceToNowStrict(new Date(publishedTime), { addSuffix: true })
+  const formattedcreatedAt = createdAt
+    ? formatDistanceToNowStrict(new Date(createdAt), { addSuffix: true })
     : "Recently";
 
   const coverImageUrl = coverImage
@@ -21,21 +21,22 @@ const SideCard = ({ article }) => {
       <div className="rounded-lg flex gap-3 overflow-hidden bg-white group">
         {/* Article Details */}
         <div className="flex flex-col justify-center gap-1 w-1/2">
-          <p className="text-sm md:text-md text-gray-600">
-            {author || "Unknown Author"} | {formattedPublishedTime}
-          </p>
-          <h3 className="text-xl md:text-xl font-medium sidecard-title">
+          <div className="flex flex-col xs:inline md:flex xl:inline text-sm lg:text-base text-gray-600">
+            <span>{author || "Unknown Author"}</span>
+            <span className="hidden xs:inline md:hidden xl:inline"> | </span>
+            <span>{formattedcreatedAt}</span>
+          </div>
+
+          <h3 className="text-base xs:text-lg font-medium sidecard-title">
             {title}
           </h3>
-          <div className="flex flex-col lg:inline">
-            <span className="text-red-700 font-medium text-sm md:text-md">
+
+          <div className="flex flex-col xs:inline md:flex xl:inline text-sm lg:text-base text-gray-600">
+            <span className="text-red-700 font-medium ">
               {category || "General"}
             </span>
-            <span className="text-gray-600 hidden lg:inline text-sm md:text-md">
-              {" "}
-              |{" "}
-            </span>
-            <span className="text-gray-600 text-sm md:text-md">
+            <span className="hidden xs:inline md:hidden xl:inline"> | </span>
+            <span className="">
               {timeToRead
                 ? `${timeToRead} min read`
                 : "Reading time unavailable"}
@@ -64,7 +65,7 @@ SideCard.propTypes = {
       url: PropTypes.string,
     }),
     author: PropTypes.string,
-    publishedTime: PropTypes.string,
+    createdAt: PropTypes.string,
     category: PropTypes.string,
     timeToRead: PropTypes.number,
     body: PropTypes.string,

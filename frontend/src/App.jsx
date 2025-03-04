@@ -4,10 +4,10 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import National from './pages/National'
 import International from './pages/International'
-import Science from './pages/Science'
+import Technology from './pages/Technology'
 import Business from './pages/Business'
 import Education from './pages/Education'
-import Health from './pages/Health'
+import Lifestyle from './pages/Lifestyle'
 import Entertainment from './pages/Entertainment'
 import Sports from './pages/Sports'
 import ContactUs from './pages/ContactUs'
@@ -29,10 +29,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/national" element={<National />} />
         <Route path="/international" element={<International />} />
-        <Route path="/science" element={<Science />} />
+        <Route path="/technology" element={<Technology />} />
         <Route path="/business" element={<Business />} />
         <Route path="/education" element={<Education />} />
-        <Route path="/health" element={<Health />} />
+        <Route path="/lifestyle" element={<Lifestyle />} />
         <Route path="/entertainment" element={<Entertainment />} />
         <Route path="/sports" element={<Sports />} />
         <Route path="/aboutus" element={<AboutUs />} />

@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+
 const SignUp = () => {
+
+    useEffect(() => {
+          window.scrollTo(0, 0);
+        }, []);
+
     return (
       <div className="flex justify-center items-center bg-white !px-6 !py-10">
         <div className="bg-white shadow-lg rounded-lg !p-8 w-full max-w-md border border-gray-200">

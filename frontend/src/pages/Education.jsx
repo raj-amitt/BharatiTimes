@@ -9,7 +9,7 @@ import BigCard from "../components/BigCard";
 import SideCard from "../components/SideCard";
 import FullCard from "../components/FullCard";
 
-const National = () => {
+const Education = () => {
   const { loading, error, data } = useFetch(
     "http://localhost:1337/api/articles/category/Education"
   );
@@ -21,24 +21,29 @@ const National = () => {
   const [visibleCards, setVisibleCards] = useState([]);
 
   useEffect(() => {
-    if (allArticles) {
-      const shuffledArticles = [...allArticles].sort(() => 0.5 - Math.random()); 
+    window.scrollTo(0, 0);
+  }, []);
 
+  useEffect(() => {
+    if (allArticles) {
+      const filteredArticles = allArticles.filter(article => article.category !== "Education");
+      const shuffledArticles = [...filteredArticles].sort(() => 0.5 - Math.random());
+  
       const handleResize = () => {
         if (window.innerWidth < 1024) {
-          setVisibleCards(shuffledArticles.slice(0, 4)); 
+          setVisibleCards(shuffledArticles.slice(0, 4));
         } else {
-          setVisibleCards(shuffledArticles.slice(0, 6)); 
+          setVisibleCards(shuffledArticles.slice(0, 6));
         }
       };
-
+  
       window.addEventListener("resize", handleResize);
-
       handleResize();
-
+  
       return () => window.removeEventListener("resize", handleResize);
     }
   }, [allArticles]);
+  
 
   if (loading || allLoading) {
     return (
@@ -70,7 +75,7 @@ const National = () => {
             <AdSlider />
           </div>
           <div className="w-full md:w-2/5 flex flex-col gap-5">
-            <LatestNews articles={data.slice(0, 5)} />
+            <LatestNews articles={data} />
           </div>
         </section>
 
@@ -128,4 +133,4 @@ const National = () => {
   );
 };
 
-export default National;
+export default Education;

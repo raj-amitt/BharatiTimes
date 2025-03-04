@@ -8,14 +8,14 @@ const MainCard = ({ article }) => {
     title,
     coverImage,
     author,
-    publishedTime,
+    createdAt,
     category,
     timeToRead,
     body,
   } = article;
 
-  const formattedPublishedTime = publishedTime
-    ? formatDistanceToNowStrict(new Date(publishedTime), { addSuffix: true })
+  const formattedcreatedAt = createdAt
+    ? formatDistanceToNowStrict(new Date(createdAt), { addSuffix: true })
     : "Recently";
 
   const coverImageUrl = coverImage
@@ -23,23 +23,28 @@ const MainCard = ({ article }) => {
     : "../../tech.jpg";
 
   return (
-    <div className="rounded-lg flex flex-col overflow-hidden bg-white gap-y-4">
-      <div className="flex flex-col justify-center gap-2">
-        <p className="text-sm text-gray-600">
-          {author || "Unknown Author"}| {formattedPublishedTime}
-        </p>
-        <p className="text-sm text-gray-600">
-          <span className="text-red-700 font-medium">
-            {category || "General"}
-          </span>{" "}
-          <span className="text-gray-600 hidden lg:inline text-sm md:text-md">
-            {" "}
-            |{" "}
-          </span>
-          <span className="text-gray-600 text-sm md:text-md">
-            {timeToRead ? `${timeToRead} min read` : "Reading time unavailable"}
-          </span>
-        </p>
+    <div className="rounded-lg flex flex-col overflow-hidden bg-white">
+      <div className="flex flex-col justify-center !gap-4">
+        <h3 className="text-2xl font-medium">{title}</h3>
+        <div className="flex flex-col gap-2">
+          <p className="text-sm text-gray-600">
+            {author || "Unknown Author"} | {formattedcreatedAt}
+          </p>
+          <p className="text-sm text-gray-600">
+            <span className="text-red-700 font-medium">
+              {category || "General"}
+            </span>{" "}
+            <span className="text-gray-600 hidden lg:inline text-sm md:text-md">
+              {" "}
+              |{" "}
+            </span>
+            <span className="text-gray-600 text-sm md:text-md">
+              {timeToRead
+                ? `${timeToRead} min read`
+                : "Reading time unavailable"}
+            </span>
+          </p>
+        </div>
         <div className="">
           <img
             src={coverImageUrl}
@@ -47,7 +52,6 @@ const MainCard = ({ article }) => {
             alt={title}
           />
         </div>
-        <h3 className="text-xl font-medium">{title}</h3>
         <p className="text-sm text-gray-600">{body}</p>
       </div>
     </div>
@@ -62,7 +66,7 @@ MainCard.propTypes = {
       url: PropTypes.string,
     }),
     author: PropTypes.string,
-    publishedTime: PropTypes.string,
+    createdAt: PropTypes.string,
     category: PropTypes.string,
     timeToRead: PropTypes.number,
     body: PropTypes.string,

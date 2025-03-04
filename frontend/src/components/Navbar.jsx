@@ -52,12 +52,12 @@ const Navbar = () => {
             { path: "/", label: "Home" },
             { path: "/national", label: "National" },
             { path: "/international", label: "International" },
-            { path: "/science", label: "Science & Tech" },
-            { path: "/business", label: "Business & Economics" },
+            { path: "/technology", label: "Technology" },
+            { path: "/business", label: "Business" },
             { path: "/education", label: "Education" },
-            { path: "/health", label: "Health" },
-            { path: "/aboutus", label: "About" },
-            { path: "/contactus", label: "Contact" },
+            { path: "/lifestyle", label: "Lifestyle" },
+            { path: "/entertainment", label: "Entertainment" },
+            { path: "/sports", label: "Sports" },
           ].map(({ path, label }) => (
             <li key={path} className="text-right !mb-2 lg:!mb-0">
               <NavLink
@@ -74,8 +74,8 @@ const Navbar = () => {
           {/* More items for small screens (No dropdown) */}
           <div className="md:hidden">
             {[
-              { path: "/entertainment", label: "Entertainment" },
-              { path: "/sports", label: "Sports" },
+              { path: "/aboutus", label: "About" },
+              { path: "/contactus", label: "Contact" },
               { path: "/currentissue", label: "Current Issue" },
               { path: "/archive", label: "Archive" },
               { path: "/login", label: "Login" },
@@ -124,8 +124,8 @@ const Navbar = () => {
               }`}
             >
               {[
-                { path: "/entertainment", label: "Entertainment" },
-                { path: "/sports", label: "Sports" },
+                { path: "/aboutus", label: "About" },
+                { path: "/contactus", label: "Contact" },
                 { path: "/currentissue", label: "Current Issue" },
                 { path: "/archive", label: "Archive" },
                 { path: "/login", label: "Login" },

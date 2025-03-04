@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -17,6 +17,10 @@ const Login = () => {
     setError(""); // Reset error on successful validation
     alert("Login successful!"); // Replace this with actual authentication logic
   };
+
+  useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
   return (
     <div className="flex justify-center items-center bg-white !px-6 !py-10">

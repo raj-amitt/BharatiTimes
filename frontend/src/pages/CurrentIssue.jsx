@@ -1,15 +1,20 @@
+import { useEffect } from "react";
 import PdfCard from "../components/PdfCard";
 
-const newspapers = [
-  {
-    id: 1,
-    title: "Newspaper 1",
-    date: "2025-02-07",
-    pdfLink: "/Volume-1-Issue-63.pdf",
-  }
-];
-
 const CurrentIssue = () => {
+  const newspapers = [
+    {
+      id: 1,
+      title: "Newspaper 1",
+      date: "2025-02-07",
+      pdfLink: "/Volume-1-Issue-63.pdf",
+    }
+  ];
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   return (
     <div className="flex gap-4 !px-6 !py-10 bg-white">
       <main className="flex flex-col w-full gap-8 md:gap-10">
